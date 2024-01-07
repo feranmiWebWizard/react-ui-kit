@@ -1,17 +1,18 @@
 import { motion, useCycle, AnimatePresence, MotionConfig } from "framer-motion";
+import logo from "../../assets/images/Logo1.jpg";
 
 function Navbar() {
   const [mobileNav, toggleMobileNav] = useCycle(false, true);
 
   return (
     <nav className="bg-purple sticky top-0 inset-x-0 z-[10] p-4">
-      <div className="flex justify-end relative px-4 py-2 z-10">
+      <div className="flex justify-end relative lg:hidden px-4 py-2 z-10">
         <motion.button
           animate={mobileNav ? "open" : "closed"}
           onClick={() => {
             toggleMobileNav();
           }}
-          className="space-y-1"
+          className="space-y-1 "
         >
           <motion.span
             variants={{
@@ -63,7 +64,7 @@ function Navbar() {
               initial="closed"
               animate="open"
               exit="closed"
-              className="bg-purple text-white flex flex-col justify-center fixed inset-0"
+              className="bg-purple text-white flex flex-col justify-center fixed inset-0 lg:hidden"
             >
               <motion.div
                 variants={{
@@ -71,18 +72,120 @@ function Navbar() {
                   closed: { opacity: 0, x: "25%" },
                 }}
               >
-                <ul className="text-2xl space-y-10 p-4 inset-0">
-                  <li className="">Home</li>
-                  <li className="">Menu</li>
-                  <li className="">Our Story</li>
-                  <li className="">Order Now</li>
-                  <li className="">Contact Us</li>
+                <ul className="text-2xl font-semibold space-y-10 p-10 inset-0">
+                  <motion.li
+                    variants={{
+                      tapped: { scale: 1.2 },
+                      untouched: { scale: 1 },
+                    }}
+                    whileTap="tapped"
+                    initial="untouched"
+                    className=""
+                  >
+                    Home
+                  </motion.li>
+                  <motion.li
+                    variants={{
+                      tapped: { scale: 1.2 },
+                      untouched: { scale: 1 },
+                    }}
+                    whileTap="tapped"
+                    initial="untouched"
+                    className=""
+                  >
+                    Menu
+                  </motion.li>
+                  <motion.li
+                    variants={{
+                      tapped: { scale: 1.2 },
+                      untouched: { scale: 1 },
+                    }}
+                    whileTap="tapped"
+                    initial="untouched"
+                    className=""
+                  >
+                    Our Story
+                  </motion.li>
+                  <motion.li
+                    variants={{
+                      tapped: { scale: 1.2 },
+                      untouched: { scale: 1 },
+                    }}
+                    whileTap="tapped"
+                    initial="untouched"
+                    className=""
+                  >
+                    Order Now
+                  </motion.li>
+                  <motion.li
+                    variants={{
+                      tapped: { scale: 1.2 },
+                      untouched: { scale: 1 },
+                    }}
+                    whileTap="tapped"
+                    initial="untouched"
+                    className=""
+                  >
+                    Contact Us
+                  </motion.li>
                 </ul>
               </motion.div>
             </motion.div>
           </MotionConfig>
         )}
       </AnimatePresence>
+
+      <div className="text-white text-xl hidden lg:flex justify-around">
+        <div>
+          <img
+            className="rounded-[50%] absolute "
+            src={logo}
+            alt="witty bakehouse's logo"
+          />
+        </div>
+        <ul className="text-2xl font-semibold flex items-center space-x-10">
+          <motion.li
+            variants={{ hover: { x: [0, -5, 5, -5, 5, -5, 5, -5, 5, -5, 0] } }}
+            whileHover="hover"
+            initial="initial"
+            className=""
+          >
+            Home
+          </motion.li>
+          <motion.li
+            variants={{ hover: { x: [0, -5, 5, -5, 5, -5, 5, -5, 5, -5, 0] } }}
+            whileHover="hover"
+            initial="initial"
+            className=""
+          >
+            Our Story
+          </motion.li>
+          <motion.li
+            variants={{ hover: { x: [0, -5, 5, -5, 5, -5, 5, -5, 5, -5, 0] } }}
+            whileHover="hover"
+            initial="initial"
+            className=""
+          >
+            Contact
+          </motion.li>
+          <motion.li
+            variants={{ hover: { x: [0, -5, 5, -5, 5, -5, 5, -5, 5, -5, 0] } }}
+            whileHover="hover"
+            initial="initial"
+            className=""
+          >
+            Cakes & More
+          </motion.li>
+          <motion.li
+            whileHover={{ scale: 1.2, backgroundColor: "#F7B2B7DE" }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            className="bg-black text-white rounded-[1rem] cursor-pointer py-3 px-4"
+          >
+            Order Now!
+          </motion.li>
+        </ul>
+      </div>
     </nav>
   );
 }

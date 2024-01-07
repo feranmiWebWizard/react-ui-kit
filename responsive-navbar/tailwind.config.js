@@ -4,7 +4,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        purple: "#7F2982",
+        purple: "#7F2982DB",
+        peach: "#F7B2B7DE",
       },
     },
   },
