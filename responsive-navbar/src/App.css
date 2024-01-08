@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "louis-george";
+  src: url("/louis-george.ttf") format("truetype");
+  /* You can include additional font formats here */
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "gummy";
+  src: url("/Gelato.ttf") format("truetype");
+  /* You can include additional font formats here */
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "louis-george", sans-serif;
+}

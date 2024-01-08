@@ -143,37 +143,17 @@ function Navbar() {
             alt="witty bakehouse's logo"
           />
         </div>
-        <ul className="text-2xl font-semibold flex items-center space-x-10">
-          <motion.li
-            variants={{ hover: { x: [0, -5, 5, -5, 5, -5, 5, -5, 5, -5, 0] } }}
-            whileHover="hover"
-            initial="initial"
-            className=""
-          >
+        <ul className="text-2xl flex items-center space-x-10">
+          <motion.li whileHover={{ y: -5 }} className="">
             Home
           </motion.li>
-          <motion.li
-            variants={{ hover: { x: [0, -5, 5, -5, 5, -5, 5, -5, 5, -5, 0] } }}
-            whileHover="hover"
-            initial="initial"
-            className=""
-          >
+          <motion.li whileHover={{ y: -5 }} className="">
             Our Story
           </motion.li>
-          <motion.li
-            variants={{ hover: { x: [0, -5, 5, -5, 5, -5, 5, -5, 5, -5, 0] } }}
-            whileHover="hover"
-            initial="initial"
-            className=""
-          >
+          <motion.li whileHover={{ y: -5 }} className="">
             Contact
           </motion.li>
-          <motion.li
-            variants={{ hover: { x: [0, -5, 5, -5, 5, -5, 5, -5, 5, -5, 0] } }}
-            whileHover="hover"
-            initial="initial"
-            className=""
-          >
+          <motion.li whileHover={{ y: -5 }} className="">
             Cakes & More
           </motion.li>
           <motion.li
